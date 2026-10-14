@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="ThiepCuoi/ThiepCuoi.csproj" />
+  <Project Path="ThiepCuoi/ThiepCuoi.csproj">
+    <BuildType Project="Release" />
+  </Project>
 </Solution>
