@@ -7,6 +7,7 @@ $ErrorActionPreference = "Stop"
 
 $Root = $PSScriptRoot
 $ProjectPath = Join-Path $Root "ThiepCuoi\ThiepCuoi.csproj"
+$ProjectDll = Join-Path $Root "ThiepCuoi\bin\$Configuration\net10.0\ThiepCuoi.dll"
 $WwwRoot = Join-Path $Root "ThiepCuoi\wwwroot"
 $DocsPath = Join-Path $Root "docs"
 $Url = "http://127.0.0.1:$Port"
@@ -38,11 +39,16 @@ New-Item -ItemType Directory -Path $DocsPath | Out-Null
 $appProcess = $null
 
 try {
-    $arguments = "run --project `"$ProjectPath`" --configuration $Configuration --no-launch-profile --urls `"$Url`""
+    if (-not (Test-Path -LiteralPath $ProjectDll)) {
+        dotnet build $ProjectPath --configuration $Configuration --nologo
+    }
+
+    $arguments = "`"$ProjectDll`" --urls `"$Url`""
 
     $appProcess = Start-Process `
         -FilePath "dotnet" `
         -ArgumentList $arguments `
+        -WorkingDirectory $Root `
         -PassThru `
         -WindowStyle Hidden `
         -RedirectStandardOutput $OutputLog `

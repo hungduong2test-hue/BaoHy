@@ -5,6 +5,13 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseAppHost>false</UseAppHost>
+    <!-- Automatically refresh docs/ when building Release in Visual Studio. -->
+    <PublishStaticSiteOnBuild Condition="'$(PublishStaticSiteOnBuild)' == '' and '$(Configuration)' == 'Release'">true</PublishStaticSiteOnBuild>
   </PropertyGroup>
+
+  <Target Name="PublishStaticSiteAfterBuild" AfterTargets="Build" Condition="'$(PublishStaticSiteOnBuild)' == 'true'">
+    <Message Importance="high" Text="Exporting GitHub Pages files to docs..." />
+    <Exec Command="powershell.exe -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\..\publish-github-pages.ps1&quot; -Configuration $(Configuration)" />
+  </Target>
 
 </Project>
