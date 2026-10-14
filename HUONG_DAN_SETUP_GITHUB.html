@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hướng dẫn đưa website lên GitHub</title>
+  <style>
+    :root { color-scheme: light; --ink:#243044; --muted:#667085; --accent:#7c3aed; --soft:#f5f3ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); background:#f8fafc; }
+    main { max-width:920px; margin:40px auto; padding:0 22px 60px; }
+    header { padding:34px; color:white; border-radius:18px; background:linear-gradient(135deg,#4f46e5,#9333ea); box-shadow:0 12px 35px #312e8133; }
+    h1 { margin:0 0 8px; font-size:clamp(28px,5vw,44px); line-height:1.15; }
+    h2 { margin-top:34px; color:#4c1d95; }
+    h3 { margin-top:24px; }
+    section, .note { margin-top:22px; padding:24px 28px; background:white; border-radius:14px; box-shadow:0 4px 18px #0f172a0d; }
+    code { padding:2px 6px; border-radius:5px; background:#eef2ff; color:#4338ca; }
+    pre { overflow:auto; padding:16px; border-radius:10px; color:#e5e7eb; background:#111827; }
+    pre code { padding:0; color:inherit; background:none; }
+    .note { border-left:5px solid var(--accent); background:var(--soft); }
+    .muted { color:var(--muted); }
+    li { margin:7px 0; }
+    a { color:#6d28d9; font-weight:600; }
+    .check { color:#166534; font-weight:600; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Đưa website lên GitHub từ đầu</h1>
+    <div>Hướng dẫn cho dự án ThiepCuoi và GitHub Pages</div>
+  </header>
+
+  <div class="note">
+    <strong>Quy trình tổng quát:</strong>
+    chỉnh mã nguồn → Build Release trong Visual Studio → commit/push lên GitHub → GitHub Pages tự triển khai website.
+  </div>
+
+  <section>
+    <h2>1. Chuẩn bị</h2>
+    <ul>
+      <li>Cài <a href="https://git-scm.com/download/win">Git for Windows</a>.</li>
+      <li>Có tài khoản GitHub và đăng nhập trong Visual Studio hoặc Git Credential Manager.</li>
+      <li>Mở đúng thư mục dự án: <code>D:\5. All_application\ThiepCuoi\webThiepcuoi_customChangetheoconfig</code>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Tạo repository trên GitHub</h2>
+    <ol>
+      <li>Vào <a href="https://github.com/new">github.com/new</a>.</li>
+      <li>Đặt tên repository, ví dụ <code>ThiepCuoi</code>.</li>
+      <li>Chọn <strong>Public</strong>.</li>
+      <li>Không tạo sẵn README, .gitignore hoặc License nếu dự án đã có các file này.</li>
+      <li>Bấm <strong>Create repository</strong>.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>3. Upload dự án lần đầu bằng PowerShell</h2>
+    <p>Mở PowerShell tại thư mục dự án và chạy:</p>
+    <pre><code>cd "D:\5. All_application\ThiepCuoi\webThiepcuoi_customChangetheoconfig"
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/USERNAME/ThiepCuoi.git
+git push -u origin main</code></pre>
+    <p>Thay <code>USERNAME</code> bằng username GitHub của bạn.</p>
+    <p class="check">Nếu repository đã có remote và commit rồi, chỉ cần dùng: <code>git push</code>.</p>
+  </section>
+
+  <section>
+    <h2>4. Bật GitHub Pages</h2>
+    <ol>
+      <li>Mở repository trên GitHub.</li>
+      <li>Vào <strong>Settings → Pages</strong>.</li>
+      <li>Ở phần Source, chọn <strong>Deploy from a branch</strong>.</li>
+      <li>Chọn branch <code>main</code> và thư mục <code>/docs</code>.</li>
+      <li>Bấm <strong>Save</strong>.</li>
+    </ol>
+    <p>Sau khi build xong, link có dạng:</p>
+    <pre><code>https://USERNAME.github.io/ThiepCuoi/</code></pre>
+  </section>
+
+  <section>
+    <h2>5. Cập nhật website bằng Visual Studio</h2>
+    <ol>
+      <li>Sửa nội dung trong <code>ThiepCuoi\Config</code> hoặc giao diện trong <code>ThiepCuoi\wwwroot</code>.</li>
+      <li>Chọn cấu hình <strong>Release</strong> trên thanh công cụ Visual Studio.</li>
+      <li>Chọn <strong>Build → Build Solution</strong> hoặc nhấn <code>Ctrl + Shift + B</code>.</li>
+      <li>Project sẽ tự xuất website tĩnh vào thư mục <code>docs</code>.</li>
+      <li>Mở cửa sổ <strong>Git Changes</strong>, nhập nội dung commit.</li>
+      <li>Bấm <strong>Commit All and Push</strong>.</li>
+    </ol>
+    <p class="muted">Cấu hình hiện tại chỉ tự export khi build Release. Build Debug không làm thay đổi website GitHub Pages.</p>
+  </section>
+
+  <section>
+    <h2>6. Nếu thêm file HTML mới</h2>
+    <p>File HTML tĩnh cần được đưa vào thư mục xuất bản <code>docs</code>. Ví dụ:</p>
+    <pre><code>docs\thong-tin.html</code></pre>
+    <p>Để file không bị mất ở lần export tiếp theo, hãy thêm logic copy file đó vào <code>publish-github-pages.ps1</code>, rồi build Release lại.</p>
+    <p>Đường dẫn sau khi deploy sẽ là:</p>
+    <pre><code>https://USERNAME.github.io/ThiepCuoi/thong-tin.html</code></pre>
+  </section>
+
+  <section>
+    <h2>7. Lỗi thường gặp</h2>
+    <ul>
+      <li><strong>404:</strong> kiểm tra Pages đang chọn đúng <code>main → /docs</code> và chờ GitHub build.</li>
+      <li><strong>403 khi push:</strong> Git đang đăng nhập sai tài khoản; đăng nhập lại Git Credential Manager.</li>
+      <li><strong>Ảnh/CSS không tải:</strong> kiểm tra đường dẫn tương đối, dùng <code>./images/...</code> thay vì đường dẫn bắt đầu bằng <code>/</code>.</li>
+      <li><strong>Website chưa đổi:</strong> kiểm tra Git Changes đã commit và push chưa, sau đó nhấn <code>Ctrl + F5</code>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>8. Các lệnh cập nhật nhanh</h2>
+    <pre><code>git add .
+git commit -m "Update website"
+git push</code></pre>
+  </section>
+</main>
+</body>
+</html>
