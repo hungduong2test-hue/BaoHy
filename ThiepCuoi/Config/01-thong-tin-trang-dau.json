@@ -1,0 +1,81 @@
+{
+  "Wedding": {
+    "BrideName": "Thị Hoàng",
+    "GroomName": "Văn Hùng",
+    "BrideRank": "ÚT NỮ",
+    "GroomRank": "QUÝ NAM",
+    "DateLabel": "Chủ Nhật, 25 tháng 10, 2026",
+    "HeroProfiles": [
+      {
+        "Role": "QUÝ NAM",
+        "Name": "Văn Hùng",
+        "Image": "/images/trang-dau/chu-re.jpg"
+      },
+      {
+        "Role": "ÚT NỮ",
+        "Name": "Thị Hoàng",
+        "Image": "/images/trang-dau/co-dau.jpg"
+      }
+    ],
+    "PortraitImage": "/images/trang-dau/co-dau.jpg",
+    "HeroImage": "/images/trang-dau/chu-re.jpg",
+    "Gallery": [
+      {
+        "Url": "/images/album/album-01.jpg",
+        "Caption": "Cô dâu Thị Hoàng"
+      },
+      {
+        "Url": "/images/album/album-02.jpg",
+        "Caption": "Chú rể Văn Hùng"
+      },
+      {
+        "Url": "/images/album/album-03.jpg",
+        "Caption": "Khoảnh khắc bên nhau"
+      },
+      {
+        "Url": "/images/album/album-04.jpg",
+        "Caption": "Dạo bước cùng nhau"
+      },
+      {
+        "Url": "/images/album/album-05.jpg",
+        "Caption": "Nụ cười ngày vui"
+      },
+      {
+        "Url": "/images/album/album-06.jpg",
+        "Caption": "Tình yêu dịu dàng"
+      },
+      {
+        "Url": "/images/album/album-07.jpg",
+        "Caption": "Ánh mắt thương mến"
+      },
+      {
+        "Url": "/images/album/album-08.jpg",
+        "Caption": "Kỷ niệm của đôi ta"
+      },
+      {
+        "Url": "/images/album/album-09.jpg",
+        "Caption": "Ngày hạnh phúc"
+      },
+      {
+        "Url": "/images/album/album-10.jpg",
+        "Caption": "Bên nhau trọn đời"
+      },
+      {
+        "Url": "/images/album/album-11.jpg",
+        "Caption": "Nắm tay qua mùa thương"
+      },
+      {
+        "Url": "/images/album/album-12.jpg",
+        "Caption": "Một đời bình yên"
+      },
+      {
+        "Url": "/images/album/album-13.jpg",
+        "Caption": "Ngày mình chung đôi"
+      },
+      {
+        "Url": "/images/album/album-14.jpg",
+        "Caption": "Yêu thương gửi lại"
+      }
+    ]
+  }
+}

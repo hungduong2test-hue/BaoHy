@@ -1,0 +1,45 @@
+HUONG DAN DUA WEBSITE LEN GITHUB PAGES
+
+1. Xuat ban tinh de dua len GitHub Pages
+- Mo PowerShell tai thu muc Code.
+- Chay lenh:
+  .\publish-github-pages.ps1
+- Sau khi chay xong, thu muc docs se chua website tinh co the dua len GitHub Pages.
+
+2. Dua code len GitHub
+- Tao repository tren GitHub, vi du: ThiepCuoi.
+- Chay cac lenh:
+  git init
+  git add .
+  git commit -m "Publish wedding invitation"
+  git branch -M main
+  git remote add origin https://github.com/<ten-github-cua-ban>/ThiepCuoi.git
+  git push -u origin main
+
+3. Dua website tinh len repository
+- Sao chep TOAN BO NOI DUNG ben trong thu muc docs vao thu muc goc repository.
+- Tep index.html va .nojekyll phai nam ngay o thu muc goc repository.
+- Commit va push cac tep len nhanh main.
+
+4. Bat GitHub Pages
+- Vao repository tren GitHub.
+- Chon Settings > Pages.
+- Source: Deploy from a branch.
+- Branch: main.
+- Folder: /(root).
+- Bam Save.
+
+5. Link truy cap
+- Sau vai phut GitHub se tao link:
+  https://<ten-github-cua-ban>.github.io/<ten-repository>/
+
+6. Luu xac nhan tham du vao Google Sheets
+- Lam theo HUONG_DAN_GOOGLE_SHEETS.txt, sau do chay lai buoc 1.
+- Cac tep docs moi phai duoc commit va push len GitHub.
+- GitHub Pages khong ghi duoc Comfirm.txt. RSVP se duoc gui den Google Sheet thay the.
+
+7. Khi doi thong tin thiep
+- Sua cac file trong thu muc ThiepCuoi/Config hoac doi anh trong ThiepCuoi/wwwroot/images.
+- Chay lai:
+  .\publish-github-pages.ps1
+- Sau do commit va push len GitHub lai.

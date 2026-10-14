@@ -1,0 +1,41 @@
+{
+  "Wedding": {
+    "CeremonyPlace": "TƯ GIA",
+    "CeremonyFamilyOrderNote": "GroomFirst = nhà trai hiện trước, BrideFirst = nhà gái hiện trước",
+    "CeremonyFamilyOrder": "GroomFirst",
+    "CeremonyFamilies": [
+      {
+        "Family": "Nhà trai",
+        "FatherName": "Dương Văn Lựa",
+        "MotherName": "Nguyễn Thị Yến",
+        "Address": "TDP Thành Hưng, Phường Yên Dũng, TP Bắc Ninh"
+      },
+      {
+        "Family": "Nhà gái",
+        "FatherName": "Lê Hồng Long",
+        "MotherName": "Nguyễn Thị Minh Liễu",
+        "Address": "KDC 20, TDP Lộ Bàn, Phường Đức Phổ, Tỉnh Quảng Ngãi"
+      }
+    ],
+    "CoupleProfiles": [
+      {
+        "Role": "Chú rể",
+        "Name": "Dương Văn Hùng",
+        "Parents": "Con trai gia đình nhà trai",
+        "Address": "Đức Phổ, Quảng Ngãi",
+        "Phone": "0900 000 002",
+        "Image": "/images/trang-dau/chu-re.jpg",
+        "Description": "Ấm áp, trách nhiệm và mong được đón tiếp quý khách trong ngày vui."
+      },
+      {
+        "Role": "Cô dâu",
+        "Name": "Lê Thị Hoàng",
+        "Parents": "Con gái gia đình nhà gái",
+        "Address": "Đức Phổ, Quảng Ngãi",
+        "Phone": "0900 000 001",
+        "Image": "/images/trang-dau/co-dau.jpg",
+        "Description": "Dịu dàng, chân thành và luôn trân trọng những khoảnh khắc bên gia đình."
+      }
+    ]
+  }
+}

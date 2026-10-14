@@ -1,0 +1,41 @@
+Tat ca thong tin chinh cua thiep nam trong file:
+appsettings.json
+
+1. Doi ten co dau, chu re
+- Wedding:BrideName
+- Wedding:GroomName
+
+2. Doi nha trai, nha gai
+- Wedding:GroomFamily
+- Wedding:BrideFamily
+- Wedding:GroomParents
+- Wedding:BrideParents
+
+3. Doi ngay gio
+- Wedding:WeddingDate
+- Wedding:DateLabel
+
+4. Doi dia diem va ban do
+- Wedding:Venue
+- Wedding:Address
+
+5. Doi hinh anh
+- Wedding:HeroImage
+- Wedding:PortraitImage
+- Wedding:Gallery
+
+Co the dung link anh online hoac duong dan anh trong wwwroot.
+Vi du: /images/anh-cuoi-1.jpg
+
+6. Doi tai khoan va ma QR mung cuoi
+Sua trong Wedding:BankAccounts.
+
+Moi tai khoan gom:
+- Role: Co dau hoac Chu re
+- BankCode: ma ngan hang VietQR, vi du MB, VCB, BIDV, TCB, ACB
+- BankName: ten hien thi
+- AccountNumber: so tai khoan
+- AccountHolder: ten chu tai khoan
+- TransferNote: noi dung chuyen khoan
+
+Website tu tao anh QR bang VietQR theo BankCode va AccountNumber.

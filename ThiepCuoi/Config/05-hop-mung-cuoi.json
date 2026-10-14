@@ -1,0 +1,22 @@
+{
+  "Wedding": {
+    "BankAccounts": [
+      {
+        "Role": "Cô dâu",
+        "BankCode": "BIDV",
+        "BankName": "BIDV Bank",
+        "AccountNumber": "67210000773869",
+        "AccountHolder": "LÊ THỊ HOÀNG",
+        "TransferNote": "Mừng cưới cho cô dâu Thị Hoàng"
+      },
+      {
+        "Role": "Chú rể",
+        "BankCode": "VPBANK",
+        "BankName": "VP Bank",
+        "AccountNumber": "160038397",
+        "AccountHolder": "DƯƠNG VĂN HÙNG",
+        "TransferNote": "Mừng cưới cho chú rể Văn Hùng"
+      }
+    ]
+  }
+}

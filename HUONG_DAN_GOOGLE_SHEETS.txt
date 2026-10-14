@@ -1,0 +1,14 @@
+LUU PHAN HOI THAM DU VAO GOOGLE SHEETS
+
+1. Tao Google Sheet moi. Mo Extensions > Apps Script.
+2. Xoa noi dung mau trong Apps Script va dan toan bo noi dung tep google-sheets/Code.gs vao tep Code.gs, sau do bam Save.
+3. Chon Deploy > New deployment. Chon loai Web app:
+   - Execute as: Me.
+   - Who has access: Anyone.
+   Bam Deploy, cap quyen theo yeu cau cua Google va sao chep URL ket thuc bang /exec.
+4. Mo file ThiepCuoi/wwwroot/js/rsvp-config.js va gan URL vua sao chep vao googleSheetsUrl, vi du:
+   googleSheetsUrl: "https://script.google.com/macros/s/ID_CUA_BAN/exec"
+5. Chay lai .\publish-github-pages.ps1 de tao lai docs, sau do sao chep noi dung ben trong docs vao repository GitHub Pages va push len GitHub.
+6. Gui mot phan hoi thu va kiem tra sheet "Phan hoi". URL Web app la cong khai; khong dat thong tin bi mat trong URL hoac ma trang web.
+
+Ma Apps Script hoan chinh nam trong tep google-sheets/Code.gs.

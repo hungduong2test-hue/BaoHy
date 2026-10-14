@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#30530f" />
+    <title>Thi&#x1EC7;p c&#x1B0;&#x1EDB;i V&#x103;n H&#xF9;ng &amp; Th&#x1ECB; Ho&#xE0;ng</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://img.vietqr.io" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/site.css" />
+</head>
+<body>
+    
+<div class="invite-shell"
+     data-wedding-date="2026-10-25T10:00:00.0000000"
+     data-auto-scroll-speed="230"
+     data-auto-scroll-delay="250">
+    <audio id="weddingAudio" src="./media/my-love.mp3" preload="auto" loop></audio>
+
+    <div class="opening-screen" id="openingScreen" aria-label="Màn mở thiệp">
+        <div class="leaf leaf-one"></div>
+        <div class="leaf leaf-two"></div>
+        <article class="envelope" aria-label="Phong bì thiệp cưới">
+            <div class="seal" aria-hidden="true">❤</div>
+            <div class="envelope-corner top-left"></div>
+            <div class="envelope-corner bottom-right"></div>
+            <p class="script-label">Thiệp cưới</p>
+            <h1>
+V&#x103;n H&#xF9;ng                        <span>&</span>
+Th&#x1ECB; Ho&#xE0;ng            </h1>
+            <div class="ornament" aria-hidden="true"><span></span>❦<span></span></div>
+            <p class="date-line">Ch&#x1EE7; Nh&#x1EAD;t, 25 th&#xE1;ng 10, 2026</p>
+            <p class="invite-note">Thân mời</p>
+            <button class="primary-button open-button" id="openInvite" type="button">Mở thiệp</button>
+        </article>
+    </div>
+
+    <button class="music-button" id="musicButton" type="button" aria-label="Bật hoặc tắt nhạc nền">
+        <span class="music-icon">♪</span>
+    </button>
+
+    <nav class="floating-nav" aria-label="Điều hướng thiệp cưới">
+        <a href="#home">Trang chủ</a>
+        <a href="#events">Lễ cưới</a>
+        <a href="#gallery">Album</a>
+        <a href="#party">Tiệc cưới</a>
+        <a href="#map">Địa điểm</a>
+        <a href="#rsvp">Sổ lưu bút</a>
+        <a href="#gift">Hộp mừng cưới</a>
+    </nav>
+
+    <main id="home">
+        <section class="hero-section collage-hero">
+            <div class="collage-flower collage-top" aria-hidden="true"></div>
+            <div class="collage-flower collage-bottom" aria-hidden="true"></div>
+            <div class="collage-band" aria-hidden="true"></div>
+            <div class="collage-stage">
+                <figure class="collage-photo bride-photo">
+                    <img src="./images/trang-dau/chu-re.jpg" alt="Ảnh V&#x103;n H&#xF9;ng" />
+                </figure>
+                <div class="collage-name bride-name">
+                    <span>QU&#xDD; NAM</span>
+                    <strong>V&#x103;n H&#xF9;ng</strong>
+                </div>
+                <div class="collage-name groom-name">
+                    <span>&#xDA;T N&#x1EEE;</span>
+                    <strong>Th&#x1ECB; Ho&#xE0;ng</strong>
+                </div>
+                <figure class="collage-photo groom-photo">
+                    <img src="./images/trang-dau/co-dau.jpg" alt="Ảnh Th&#x1ECB; Ho&#xE0;ng" />
+                </figure>
+            </div>
+            <div class="hero-content collage-actions">
+                <p class="hero-date">Ch&#x1EE7; Nh&#x1EAD;t, 25 th&#xE1;ng 10, 2026</p>
+                <div class="countdown" aria-label="Đếm ngược tới ngày cưới">
+                    <div><strong id="days">00</strong><span>Ngày</span></div>
+                    <div><strong id="hours">00</strong><span>Giờ</span></div>
+                    <div><strong id="minutes">00</strong><span>Phút</span></div>
+                    <div><strong id="seconds">00</strong><span>Giây</span></div>
+                </div>
+                <div class="hero-actions">
+                    <a class="primary-button" href="#rsvp">Gửi lời chúc</a>
+                    <a class="secondary-button light-button" href="#map">Xem bản đồ</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="events-section" id="events">
+            <article class="wedding-notice">
+                <div class="notice-flower notice-flower-left" aria-hidden="true"></div>
+                <div class="notice-flower notice-flower-right" aria-hidden="true"></div>
+                <h2>THÔNG TIN LỄ CƯỚI</h2>
+                <p class="notice-type">Th&#xE0;nh H&#xF4;n</p>
+                <div class="notice-parents">
+                        <div>
+                            <p>Ông Bà</p>
+                            <strong>D&#x1B0;&#x1A1;ng V&#x103;n L&#x1EF1;a</strong>
+                            <strong>Nguy&#x1EC5;n Th&#x1ECB; Y&#x1EBF;n</strong>
+                            <small>TDP Th&#xE0;nh H&#x1B0;ng, Ph&#x1B0;&#x1EDD;ng Y&#xEA;n D&#x169;ng, TP B&#x1EAF;c Ninh</small>
+                        </div>
+                        <div>
+                            <p>Ông Bà</p>
+                            <strong>L&#xEA; H&#x1ED3;ng Long</strong>
+                            <strong>Nguy&#x1EC5;n Th&#x1ECB; Minh Li&#x1EC5;u</strong>
+                            <small>KDC 20, TDP L&#x1ED9; B&#xE0;n, Ph&#x1B0;&#x1EDD;ng &#x110;&#x1EE9;c Ph&#x1ED5;, T&#x1EC9;nh Qu&#x1EA3;ng Ng&#xE3;i</small>
+                        </div>
+                </div>
+                <div class="notice-center">
+                    <p>TRÂN TRỌNG BÁO TIN</p>
+                    <p>L&#x1EC4; TH&#xC0;NH H&#xD4;N C&#x1EE6;A CON CH&#xDA;NG T&#xD4;I</p>
+                        <h3>V&#x103;n H&#xF9;ng</h3>
+                        <span>QU&#xDD; NAM</span>
+                            <em>&</em>
+                        <h3>Th&#x1ECB; Ho&#xE0;ng</h3>
+                        <span>&#xDA;T N&#x1EEE;</span>
+                    <p>L&#x1EC4; TH&#xC0;NH H&#xD4;N &#x110;&#x1AF;&#x1EE2;C C&#x1EEC; H&#xC0;NH T&#x1EA0;I</p>
+                    <p>T&#x1AF; GIA</p>
+                    <p>VÀO LÚC</p>
+                    <time>10:00</time>
+                    <div class="notice-date">
+                        <span>CH&#x1EE6; NH&#x1EAC;T</span>
+                        <strong>25</strong>
+                        <span>THÁNG 10</span>
+                    </div>
+                    <b>2026</b>
+                    <small>( T&#x1EE8;C NG&#xC0;Y 16/09 N&#x102;M B&#xCD;NH NG&#x1ECC; )</small>
+                </div>
+            </article>
+        </section>
+
+        <section class="gallery-section" id="gallery">
+            <div class="section-heading">
+                <p class="script-label">Album ảnh</p>
+                <h2>Những khoảnh khắc thương mến</h2>
+            </div>
+            <div class="gallery-grid">
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-01.jpg" aria-label="Xem ảnh C&#xF4; d&#xE2;u Th&#x1ECB; Ho&#xE0;ng">
+                        <img src="./images/album/album-01.jpg" alt="C&#xF4; d&#xE2;u Th&#x1ECB; Ho&#xE0;ng" loading="lazy" />
+                        <span>C&#xF4; d&#xE2;u Th&#x1ECB; Ho&#xE0;ng</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-02.jpg" aria-label="Xem ảnh Ch&#xFA; r&#x1EC3; V&#x103;n H&#xF9;ng">
+                        <img src="./images/album/album-02.jpg" alt="Ch&#xFA; r&#x1EC3; V&#x103;n H&#xF9;ng" loading="lazy" />
+                        <span>Ch&#xFA; r&#x1EC3; V&#x103;n H&#xF9;ng</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-03.jpg" aria-label="Xem ảnh Kho&#x1EA3;nh kh&#x1EAF;c b&#xEA;n nhau">
+                        <img src="./images/album/album-03.jpg" alt="Kho&#x1EA3;nh kh&#x1EAF;c b&#xEA;n nhau" loading="lazy" />
+                        <span>Kho&#x1EA3;nh kh&#x1EAF;c b&#xEA;n nhau</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-04.jpg" aria-label="Xem ảnh D&#x1EA1;o b&#x1B0;&#x1EDB;c c&#xF9;ng nhau">
+                        <img src="./images/album/album-04.jpg" alt="D&#x1EA1;o b&#x1B0;&#x1EDB;c c&#xF9;ng nhau" loading="lazy" />
+                        <span>D&#x1EA1;o b&#x1B0;&#x1EDB;c c&#xF9;ng nhau</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-05.jpg" aria-label="Xem ảnh N&#x1EE5; c&#x1B0;&#x1EDD;i ng&#xE0;y vui">
+                        <img src="./images/album/album-05.jpg" alt="N&#x1EE5; c&#x1B0;&#x1EDD;i ng&#xE0;y vui" loading="lazy" />
+                        <span>N&#x1EE5; c&#x1B0;&#x1EDD;i ng&#xE0;y vui</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-06.jpg" aria-label="Xem ảnh T&#xEC;nh y&#xEA;u d&#x1ECB;u d&#xE0;ng">
+                        <img src="./images/album/album-06.jpg" alt="T&#xEC;nh y&#xEA;u d&#x1ECB;u d&#xE0;ng" loading="lazy" />
+                        <span>T&#xEC;nh y&#xEA;u d&#x1ECB;u d&#xE0;ng</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-07.jpg" aria-label="Xem ảnh &#xC1;nh m&#x1EAF;t th&#x1B0;&#x1A1;ng m&#x1EBF;n">
+                        <img src="./images/album/album-07.jpg" alt="&#xC1;nh m&#x1EAF;t th&#x1B0;&#x1A1;ng m&#x1EBF;n" loading="lazy" />
+                        <span>&#xC1;nh m&#x1EAF;t th&#x1B0;&#x1A1;ng m&#x1EBF;n</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-08.jpg" aria-label="Xem ảnh K&#x1EF7; ni&#x1EC7;m c&#x1EE7;a &#x111;&#xF4;i ta">
+                        <img src="./images/album/album-08.jpg" alt="K&#x1EF7; ni&#x1EC7;m c&#x1EE7;a &#x111;&#xF4;i ta" loading="lazy" />
+                        <span>K&#x1EF7; ni&#x1EC7;m c&#x1EE7;a &#x111;&#xF4;i ta</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-09.jpg" aria-label="Xem ảnh Ng&#xE0;y h&#x1EA1;nh ph&#xFA;c">
+                        <img src="./images/album/album-09.jpg" alt="Ng&#xE0;y h&#x1EA1;nh ph&#xFA;c" loading="lazy" />
+                        <span>Ng&#xE0;y h&#x1EA1;nh ph&#xFA;c</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-10.jpg" aria-label="Xem ảnh B&#xEA;n nhau tr&#x1ECD;n &#x111;&#x1EDD;i">
+                        <img src="./images/album/album-10.jpg" alt="B&#xEA;n nhau tr&#x1ECD;n &#x111;&#x1EDD;i" loading="lazy" />
+                        <span>B&#xEA;n nhau tr&#x1ECD;n &#x111;&#x1EDD;i</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-11.jpg" aria-label="Xem ảnh N&#x1EAF;m tay qua m&#xF9;a th&#x1B0;&#x1A1;ng">
+                        <img src="./images/album/album-11.jpg" alt="N&#x1EAF;m tay qua m&#xF9;a th&#x1B0;&#x1A1;ng" loading="lazy" />
+                        <span>N&#x1EAF;m tay qua m&#xF9;a th&#x1B0;&#x1A1;ng</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-12.jpg" aria-label="Xem ảnh M&#x1ED9;t &#x111;&#x1EDD;i b&#xEC;nh y&#xEA;n">
+                        <img src="./images/album/album-12.jpg" alt="M&#x1ED9;t &#x111;&#x1EDD;i b&#xEC;nh y&#xEA;n" loading="lazy" />
+                        <span>M&#x1ED9;t &#x111;&#x1EDD;i b&#xEC;nh y&#xEA;n</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-13.jpg" aria-label="Xem ảnh Ng&#xE0;y m&#xEC;nh chung &#x111;&#xF4;i">
+                        <img src="./images/album/album-13.jpg" alt="Ng&#xE0;y m&#xEC;nh chung &#x111;&#xF4;i" loading="lazy" />
+                        <span>Ng&#xE0;y m&#xEC;nh chung &#x111;&#xF4;i</span>
+                    </button>
+                    <button class="gallery-item" type="button" data-gallery="./images/album/album-14.jpg" aria-label="Xem ảnh Y&#xEA;u th&#x1B0;&#x1A1;ng g&#x1EED;i l&#x1EA1;i">
+                        <img src="./images/album/album-14.jpg" alt="Y&#xEA;u th&#x1B0;&#x1A1;ng g&#x1EED;i l&#x1EA1;i" loading="lazy" />
+                        <span>Y&#xEA;u th&#x1B0;&#x1A1;ng g&#x1EED;i l&#x1EA1;i</span>
+                    </button>
+            </div>
+        </section>
+
+        <section class="party-section" id="party">
+            <div class="party-card">
+                <h2>THÔNG TIN TIỆC CƯỚI</h2>
+                <p class="party-lead">TIỆC CƯỚI SẼ DIỄN RA VÀO LÚC:</p>
+                <time class="party-time">10:00</time>
+                <div class="party-date">
+                    <span>CH&#x1EE6; NH&#x1EAC;T</span>
+                    <strong>25</strong>
+                    <span>THÁNG 10</span>
+                </div>
+                <b>2026</b>
+                <small>( T&#x1EE8;C NG&#xC0;Y 16/09 N&#x102;M B&#xCD;NH NG&#x1ECC; )</small>
+                <div class="party-times">
+                        <div>
+                            <span>&#x110;&#xF3;n kh&#xE1;ch</span>
+                            <strong>09:30</strong>
+                        </div>
+                        <div>
+                            <span>Khai ti&#x1EC7;c</span>
+                            <strong>10:00</strong>
+                        </div>
+                </div>
+                <p class="countdown-label">Cùng đếm ngược</p>
+                <p class="countdown-line"><span id="partyDays">00</span> ngày <span id="partyHours">00</span> giờ <span id="partyMinutes">00</span> phút <span id="partySeconds">00</span> giây</p>
+                <div class="mini-calendar" aria-label="Lịch tháng 10 năm 2026">
+                    <strong>Tháng 10 / 2026</strong>
+                    <div class="calendar-weekdays">
+                        <span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span>
+                    </div>
+                    <div class="calendar-days">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span class="">1</span>
+                            <span class="">2</span>
+                            <span class="">3</span>
+                            <span class="">4</span>
+                            <span class="">5</span>
+                            <span class="">6</span>
+                            <span class="">7</span>
+                            <span class="">8</span>
+                            <span class="">9</span>
+                            <span class="">10</span>
+                            <span class="">11</span>
+                            <span class="">12</span>
+                            <span class="">13</span>
+                            <span class="">14</span>
+                            <span class="">15</span>
+                            <span class="">16</span>
+                            <span class="">17</span>
+                            <span class="">18</span>
+                            <span class="">19</span>
+                            <span class="">20</span>
+                            <span class="">21</span>
+                            <span class="">22</span>
+                            <span class="">23</span>
+                            <span class="">24</span>
+                            <span class="is-wedding-day">25</span>
+                            <span class="">26</span>
+                            <span class="">27</span>
+                            <span class="">28</span>
+                            <span class="">29</span>
+                            <span class="">30</span>
+                            <span class="">31</span>
+                    </div>
+                </div>
+                <a class="calendar-link" href="#rsvp">Thêm vào lịch</a>
+                <a class="primary-button" href="#rsvp">XÁC NHẬN THAM DỰ</a>
+            </div>
+        </section>
+
+        <section class="map-section" id="map">
+            <div class="section-heading">
+                <p class="script-label">Địa điểm</p>
+                <h2>Tiệc cưới sẽ tổ chức tại</h2>
+            </div>
+            <div class="map-card">
+                <div class="map-frame">
+                    <iframe id="googleMapFrame" src="https://maps.google.com/maps?hl=vi&amp;q=T%C6%B0%20gia%20hai%20h%E1%BB%8D%2C%2055MP%2BH27%2C%20Y%C3%AAn%20D%C5%A9ng%2C%20B%E1%BA%AFc%20Ninh%2C%20Vi%E1%BB%87t%20Nam&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" title="Google Map đến 55MP&#x2B;H27, Y&#xEA;n D&#x169;ng, B&#x1EAF;c Ninh, Vi&#x1EC7;t Nam" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                </div>
+                <div class="map-info">
+                    <p class="map-venue">T&#x1B0; gia hai h&#x1ECD;</p>
+                    <p>55MP&#x2B;H27, Y&#xEA;n D&#x169;ng, B&#x1EAF;c Ninh, Vi&#x1EC7;t Nam</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="rsvp-section" id="rsvp">
+            <div class="section-heading">
+                <p class="script-label">Sổ lưu bút</p>
+                <h2>Gửi lời thương đến cô dâu chú rể</h2>
+            </div>
+            <form class="rsvp-form" id="rsvpForm" method="post" action="/?handler=SubmitRsvp">
+                <label class="rsvp-honeypot" aria-hidden="true">
+                    Để trống
+                    <input name="website" type="text" tabindex="-1" autocomplete="off" />
+                </label>
+                <label>
+                    Họ và tên
+                    <input name="guest" type="text" placeholder="Nhập tên của bạn" maxlength="120" required />
+                </label>
+                <label>
+                    Bạn sẽ tham dự?
+                    <select name="attending" required>
+                        <option value="">Chọn phản hồi</option>
+                        <option>Có, tôi sẽ đến chung vui</option>
+                        <option>Rất tiếc, tôi chưa thể tham dự</option>
+                    </select>
+                </label>
+                <label>
+                    Lời chúc
+                    <textarea name="message" rows="4" maxlength="2000" placeholder="Gửi một lời chúc thật đẹp..." required></textarea>
+                </label>
+                <button class="primary-button" type="submit">Gửi phản hồi</button>
+                <p class="form-status" id="formStatus" role="status"></p>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8PxqZvun6WBMiqeOYggTH4NUt5rcyE_uBf1uSLDEJrbiIWDMWkJlq5xEaDVNxSfhMYVDd7lH_9XooJ2iwhc-z5Urm6dYGFulEH6wKujWWJ1dzkGD_tcHtln8yi6Z33MYP_3ioWyrs_l-pl0Gg4p_OHE" /></form>
+            <div class="wish-list">
+                    <article>
+                        <strong>Gia &#x111;&#xEC;nh</strong>
+                        <p>Ch&#xFA;c hai con tr&#x103;m n&#x103;m h&#x1EA1;nh ph&#xFA;c, lu&#xF4;n y&#xEA;u th&#x1B0;&#x1A1;ng v&#xE0; &#x111;&#x1ED3;ng h&#xE0;nh c&#xF9;ng nhau.</p>
+                    </article>
+                    <article>
+                        <strong>B&#x1EA1;n b&#xE8;</strong>
+                        <p>Ch&#xFA;c c&#xF4; d&#xE2;u ch&#xFA; r&#x1EC3; c&#xF3; m&#x1ED9;t ng&#xE0;y c&#x1B0;&#x1EDB;i th&#x1EAD;t &#x111;&#x1EB9;p v&#xE0; m&#x1ED9;t h&#xE0;nh tr&#xEC;nh m&#x1EDB;i th&#x1EAD;t vi&#xEA;n m&#xE3;n.</p>
+                    </article>
+                    <article>
+                        <strong>&#x110;&#x1ED3;ng nghi&#x1EC7;p</strong>
+                        <p>Mong hai b&#x1EA1;n lu&#xF4;n gi&#x1EEF; n&#x1EE5; c&#x1B0;&#x1EDD;i h&#xF4;m nay trong su&#x1ED1;t nh&#x1EEF;ng n&#x103;m th&#xE1;ng sau n&#xE0;y.</p>
+                    </article>
+            </div>
+        </section>
+
+        <section class="gift-section" id="gift">
+            <div class="section-heading">
+                <p class="script-label">Hộp mừng cưới</p>
+                <h2>Nhấn vào phong bao để mở mã QR</h2>
+            </div>
+            <div class="gift-envelope-grid">
+                    <button class="gift-envelope-card gift-envelope-main" type="button" data-open-gift="giftDialog" aria-haspopup="dialog">
+                        <span class="gift-coin coin-one">囍</span>
+                        <span class="gift-coin coin-two">囍</span>
+                        <span class="gift-coin coin-three">囍</span>
+                        <span class="gift-envelope">
+                            <span class="gift-corner top-left-corner"></span>
+                            <span class="gift-corner top-right-corner"></span>
+                            <span class="gift-corner bottom-left-corner"></span>
+                            <span class="gift-corner bottom-right-corner"></span>
+                            <span class="gift-seal">囍</span>
+                        </span>
+                        <strong>Hộp mừng cưới</strong>
+                        <small>Nhấn để mở</small>
+                    </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>V&#x103;n H&#xF9;ng &amp; Th&#x1ECB; Ho&#xE0;ng</p>
+        <span>Hẹn gặp quý khách trong ngày vui của gia đình chúng tôi.</span>
+    </footer>
+
+    <dialog class="photo-dialog" id="photoDialog">
+        <button class="dialog-close" type="button" data-close-photo aria-label="Đóng">×</button>
+        <img id="photoDialogImage" alt="Ảnh cưới phóng to" />
+    </dialog>
+
+        <dialog class="gift-dialog gift-options-dialog" id="giftDialog">
+            <button class="dialog-close" type="button" data-close-gift aria-label="Đóng">×</button>
+            <h2>Hộp mừng cưới</h2>
+            <div class="gift-account-grid">
+                    <article class="gift-account-card">
+                        <h3>Ch&#xFA; r&#x1EC3;</h3>
+                        <p>D&#x1AF;&#x1A0;NG V&#x102;N H&#xD9;NG</p>
+                        <p>VP Bank - 160038397</p>
+                        <img src="https://img.vietqr.io/image/VPBANK-160038397-compact2.png?addInfo=M%E1%BB%ABng%20c%C6%B0%E1%BB%9Bi%20cho%20ch%C3%BA%20r%E1%BB%83%20V%C4%83n%20H%C3%B9ng&amp;accountName=D%C6%AF%C6%A0NG%20V%C4%82N%20H%C3%99NG" alt="QR chuyển khoản Ch&#xFA; r&#x1EC3;" loading="eager" decoding="async" />
+                    </article>
+                    <article class="gift-account-card">
+                        <h3>C&#xF4; d&#xE2;u</h3>
+                        <p>L&#xCA; TH&#x1ECA; HO&#xC0;NG</p>
+                        <p>BIDV Bank - 67210000773869</p>
+                        <img src="https://img.vietqr.io/image/BIDV-67210000773869-compact2.png?addInfo=M%E1%BB%ABng%20c%C6%B0%E1%BB%9Bi%20cho%20c%C3%B4%20d%C3%A2u%20Th%E1%BB%8B%20Ho%C3%A0ng&amp;accountName=L%C3%8A%20TH%E1%BB%8A%20HO%C3%80NG" alt="QR chuyển khoản C&#xF4; d&#xE2;u" loading="eager" decoding="async" />
+                    </article>
+            </div>
+        </dialog>
+</div>
+
+    <script src="./js/rsvp-config.js"></script>
+    <script src="./js/site.js"></script>
+    
+</body>
+</html>
+

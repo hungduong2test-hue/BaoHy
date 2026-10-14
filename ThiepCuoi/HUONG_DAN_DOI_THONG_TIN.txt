@@ -1,0 +1,53 @@
+﻿CAC FILE DOI THONG TIN CHINH
+================================
+
+Tat ca nam trong thu muc:
+Config
+
+1. 00-loai-thiep.json
+- Doi loai thiep: Thanh Hon, Vu Quy, Bao Hi...
+- InvitationType: dong loai thiep hien trong THONG TIN LE CUOI.
+- CeremonyAnnouncement: dong bao tin, vi du "LE THANH HON CUA CON CHUNG TOI".
+- CeremonyLocationText: dong noi le duoc cu hanh tai dau.
+
+2. 01-thong-tin-trang-dau.json
+- Doi ten co dau, chu re, ngay hien tren man dau.
+- Doi anh dau tien qua HeroProfiles.
+- Trong HeroProfiles: ai ghi tren se hien truoc o trang dau.
+- Doi album trong muc Gallery. Muon 10-30 anh thi them nhieu dong:
+  {
+    "Url": "/images/album/ten-anh.jpg",
+    "Caption": "Chu thich anh"
+  }
+
+3. 02-thong-tin-tiec-cuoi.json
+- Doi gio/ngay/thang/nam trong THONG TIN TIEC CUOI.
+- Doi lich don khach, khai tiec trong Timeline.
+
+4. 03-dia-diem-tiec-cuoi.json
+- Doi Venue va Address cho muc "Tiec cuoi se to chuc tai".
+- Google map lay dia chi theo Address.
+- MapImage la anh ban do tinh dang hien thi. Neu doi dia chi, nen thay MapImage bang anh ban do moi hoac de rong de dung map Google theo Address.
+
+5. 04-thong-tin-le-cuoi.json
+- Doi thong tin ong ba, dia chi hai ben trong THONG TIN LE CUOI.
+- Trong CeremonyFamilies: muc nao ghi tren se hien ben trai.
+- Doi thong tin co dau/chu re trong CoupleProfiles.
+
+6. 05-hop-mung-cuoi.json
+- Doi tai khoan ngan hang trong Hop mung cuoi.
+- AccountHolder nen trung ten co dau/chu re trong file 04-thong-tin-le-cuoi.json.
+- BankCode dung ma ngan hang VietQR, vi du: MB, BIDV, VCB, VPB, TCB.
+
+7. 06-cau-hinh-hieu-ung.json
+- AutoScrollSpeed: toc do tu cuon trang, don vi pixel/giay.
+  So cang lon thi cuon cang nhanh. Goi y: 120 cham vua, 145 mac dinh, 180 nhanh.
+- AutoScrollDelay: thoi gian cho truoc khi bat dau tu cuon, don vi mili-giay.
+  So cang nho thi bat dau cuon cang som. Goi y: 300 den 800.
+
+LUU Y
+================================
+- Luu file JSON xong refresh lai web. Neu dang chay dotnet run, app se tu doc lai cau hinh.
+- Anh nen dat trong: wwwroot/images/trang-dau hoac wwwroot/images/album
+- Duong dan anh viet dang: /images/album/ten-anh.jpg
+

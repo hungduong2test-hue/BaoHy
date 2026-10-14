@@ -1,0 +1,318 @@
+﻿@page
+@model IndexModel
+@{
+    var wedding = Model.Wedding;
+    var firstHeroProfile = wedding.DisplayHeroProfiles.ElementAtOrDefault(0);
+    var secondHeroProfile = wedding.DisplayHeroProfiles.ElementAtOrDefault(1);
+    var orderedHeroProfiles = wedding.DisplayHeroProfiles.Take(2).ToList();
+    var orderedCoupleNames = orderedHeroProfiles.Count > 0
+        ? string.Join(" & ", orderedHeroProfiles.Select(profile => profile.Name))
+        : $"{wedding.BrideName} & {wedding.GroomName}";
+    var calendarFirstDay = new DateTime(wedding.WeddingDate.Year, wedding.WeddingDate.Month, 1);
+    var calendarLeadingDays = ((int)calendarFirstDay.DayOfWeek + 6) % 7;
+    var calendarDaysInMonth = DateTime.DaysInMonth(wedding.WeddingDate.Year, wedding.WeddingDate.Month);
+    ViewData["Title"] = $"Thiệp cưới {orderedCoupleNames}";
+}
+
+<div class="invite-shell"
+     data-wedding-date="@wedding.WeddingDate.ToString("O")"
+     data-auto-scroll-speed="@wedding.AutoScrollSpeed"
+     data-auto-scroll-delay="@wedding.AutoScrollDelay">
+    <audio id="weddingAudio" src="~/media/my-love.mp3" preload="auto" loop></audio>
+
+    <div class="opening-screen" id="openingScreen" aria-label="Màn mở thiệp">
+        <div class="leaf leaf-one"></div>
+        <div class="leaf leaf-two"></div>
+        <article class="envelope" aria-label="Phong bì thiệp cưới">
+            <div class="seal" aria-hidden="true">❤</div>
+            <div class="envelope-corner top-left"></div>
+            <div class="envelope-corner bottom-right"></div>
+            <p class="script-label">Thiệp cưới</p>
+            <h1>
+                @for (var index = 0; index < wedding.DisplayHeroProfiles.Count; index++)
+                {
+                    if (index > 0)
+                    {
+                        <span>&</span>
+                    }
+                    @wedding.DisplayHeroProfiles[index].Name
+                }
+            </h1>
+            <div class="ornament" aria-hidden="true"><span></span>❦<span></span></div>
+            <p class="date-line">@wedding.DateLabel</p>
+            <p class="invite-note">Thân mời</p>
+            <button class="primary-button open-button" id="openInvite" type="button">Mở thiệp</button>
+        </article>
+    </div>
+
+    <button class="music-button" id="musicButton" type="button" aria-label="Bật hoặc tắt nhạc nền">
+        <span class="music-icon">♪</span>
+    </button>
+
+    <nav class="floating-nav" aria-label="Điều hướng thiệp cưới">
+        <a href="#home">Trang chủ</a>
+        <a href="#events">Lễ cưới</a>
+        <a href="#gallery">Album</a>
+        <a href="#party">Tiệc cưới</a>
+        <a href="#map">Địa điểm</a>
+        <a href="#rsvp">Sổ lưu bút</a>
+        <a href="#gift">Hộp mừng cưới</a>
+    </nav>
+
+    <main id="home">
+        <section class="hero-section collage-hero">
+            <div class="collage-flower collage-top" aria-hidden="true"></div>
+            <div class="collage-flower collage-bottom" aria-hidden="true"></div>
+            <div class="collage-band" aria-hidden="true"></div>
+            <div class="collage-stage">
+                <figure class="collage-photo bride-photo">
+                    <img src="@(firstHeroProfile?.Image ?? wedding.PortraitImage)" alt="Ảnh @(firstHeroProfile?.Name ?? wedding.BrideName)" />
+                </figure>
+                <div class="collage-name bride-name">
+                    <span>@(firstHeroProfile?.Role ?? wedding.BrideRank)</span>
+                    <strong>@(firstHeroProfile?.Name ?? wedding.BrideName)</strong>
+                </div>
+                <div class="collage-name groom-name">
+                    <span>@(secondHeroProfile?.Role ?? wedding.GroomRank)</span>
+                    <strong>@(secondHeroProfile?.Name ?? wedding.GroomName)</strong>
+                </div>
+                <figure class="collage-photo groom-photo">
+                    <img src="@(secondHeroProfile?.Image ?? wedding.HeroImage)" alt="Ảnh @(secondHeroProfile?.Name ?? wedding.GroomName)" />
+                </figure>
+            </div>
+            <div class="hero-content collage-actions">
+                <p class="hero-date">@wedding.DateLabel</p>
+                <div class="countdown" aria-label="Đếm ngược tới ngày cưới">
+                    <div><strong id="days">00</strong><span>Ngày</span></div>
+                    <div><strong id="hours">00</strong><span>Giờ</span></div>
+                    <div><strong id="minutes">00</strong><span>Phút</span></div>
+                    <div><strong id="seconds">00</strong><span>Giây</span></div>
+                </div>
+                <div class="hero-actions">
+                    <a class="primary-button" href="#rsvp">Gửi lời chúc</a>
+                    <a class="secondary-button light-button" href="#map">Xem bản đồ</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="events-section" id="events">
+            <article class="wedding-notice">
+                <div class="notice-flower notice-flower-left" aria-hidden="true"></div>
+                <div class="notice-flower notice-flower-right" aria-hidden="true"></div>
+                <h2>THÔNG TIN LỄ CƯỚI</h2>
+                <p class="notice-type">@wedding.InvitationType</p>
+                <div class="notice-parents">
+                    @foreach (var family in wedding.DisplayCeremonyFamilies.Take(2))
+                    {
+                        <div>
+                            <p>Ông Bà</p>
+                            <strong>@family.FatherName</strong>
+                            <strong>@family.MotherName</strong>
+                            <small>@family.Address</small>
+                        </div>
+                    }
+                </div>
+                <div class="notice-center">
+                    <p>TRÂN TRỌNG BÁO TIN</p>
+                    <p>@wedding.CeremonyAnnouncement</p>
+                    @for (var index = 0; index < orderedHeroProfiles.Count; index++)
+                    {
+                        if (index > 0)
+                        {
+                            <em>&</em>
+                        }
+
+                        <h3>@orderedHeroProfiles[index].Name</h3>
+                        <span>@orderedHeroProfiles[index].Role</span>
+                    }
+                    <p>@wedding.CeremonyLocationText</p>
+                    <p>@wedding.CeremonyPlace</p>
+                    <p>VÀO LÚC</p>
+                    <time>@wedding.WeddingDate.ToString("HH:mm")</time>
+                    <div class="notice-date">
+                        <span>@wedding.WeddingDate.ToString("dddd", new System.Globalization.CultureInfo("vi-VN")).ToUpper()</span>
+                        <strong>@wedding.WeddingDate.ToString("dd")</strong>
+                        <span>THÁNG @wedding.WeddingDate.ToString("MM")</span>
+                    </div>
+                    <b>@wedding.WeddingDate.ToString("yyyy")</b>
+                    <small>@wedding.LunarDateText</small>
+                </div>
+            </article>
+        </section>
+
+        <section class="gallery-section" id="gallery">
+            <div class="section-heading">
+                <p class="script-label">Album ảnh</p>
+                <h2>Những khoảnh khắc thương mến</h2>
+            </div>
+            <div class="gallery-grid">
+                @foreach (var image in wedding.Gallery)
+                {
+                    <button class="gallery-item" type="button" data-gallery="@image.Url" aria-label="Xem ảnh @image.Caption">
+                        <img src="@image.Url" alt="@image.Caption" loading="lazy" />
+                        <span>@image.Caption</span>
+                    </button>
+                }
+            </div>
+        </section>
+
+        <section class="party-section" id="party">
+            <div class="party-card">
+                <h2>THÔNG TIN TIỆC CƯỚI</h2>
+                <p class="party-lead">TIỆC CƯỚI SẼ DIỄN RA VÀO LÚC:</p>
+                <time class="party-time">@wedding.WeddingDate.ToString("HH:mm")</time>
+                <div class="party-date">
+                    <span>@wedding.WeddingDate.ToString("dddd", new System.Globalization.CultureInfo("vi-VN")).ToUpper()</span>
+                    <strong>@wedding.WeddingDate.ToString("dd")</strong>
+                    <span>THÁNG @wedding.WeddingDate.ToString("MM")</span>
+                </div>
+                <b>@wedding.WeddingDate.ToString("yyyy")</b>
+                <small>@wedding.LunarDateText</small>
+                <div class="party-times">
+                    @foreach (var item in wedding.Timeline.Take(2))
+                    {
+                        <div>
+                            <span>@item.Title</span>
+                            <strong>@item.Time</strong>
+                        </div>
+                    }
+                </div>
+                <p class="countdown-label">Cùng đếm ngược</p>
+                <p class="countdown-line"><span id="partyDays">00</span> ngày <span id="partyHours">00</span> giờ <span id="partyMinutes">00</span> phút <span id="partySeconds">00</span> giây</p>
+                <div class="mini-calendar" aria-label="Lịch tháng @wedding.WeddingDate.Month năm @wedding.WeddingDate.Year">
+                    <strong>Tháng @wedding.WeddingDate.Month / @wedding.WeddingDate.Year</strong>
+                    <div class="calendar-weekdays">
+                        <span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>CN</span>
+                    </div>
+                    <div class="calendar-days">
+                        @for (var i = 0; i < calendarLeadingDays; i++)
+                        {
+                            <span></span>
+                        }
+                        @for (var day = 1; day <= calendarDaysInMonth; day++)
+                        {
+                            <span class="@(day == wedding.WeddingDate.Day ? "is-wedding-day" : "")">@day</span>
+                        }
+                    </div>
+                </div>
+                <a class="calendar-link" href="#rsvp">Thêm vào lịch</a>
+                <a class="primary-button" href="#rsvp">XÁC NHẬN THAM DỰ</a>
+            </div>
+        </section>
+
+        <section class="map-section" id="map">
+            <div class="section-heading">
+                <p class="script-label">Địa điểm</p>
+                <h2>Tiệc cưới sẽ tổ chức tại</h2>
+            </div>
+            <div class="map-card">
+                <div class="map-frame">
+                    <iframe id="googleMapFrame" src="@wedding.MapEmbedUrl" title="Google Map đến @wedding.Address" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                </div>
+                <div class="map-info">
+                    <p class="map-venue">@wedding.Venue</p>
+                    <p>@wedding.Address</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="rsvp-section" id="rsvp">
+            <div class="section-heading">
+                <p class="script-label">Sổ lưu bút</p>
+                <h2>Gửi lời thương đến cô dâu chú rể</h2>
+            </div>
+            <form class="rsvp-form" id="rsvpForm" method="post" asp-page-handler="SubmitRsvp">
+                <label class="rsvp-honeypot" aria-hidden="true">
+                    Để trống
+                    <input name="website" type="text" tabindex="-1" autocomplete="off" />
+                </label>
+                <label>
+                    Họ và tên
+                    <input name="guest" type="text" placeholder="Nhập tên của bạn" maxlength="120" required />
+                </label>
+                <label>
+                    Bạn sẽ tham dự?
+                    <select name="attending" required>
+                        <option value="">Chọn phản hồi</option>
+                        <option>Có, tôi sẽ đến chung vui</option>
+                        <option>Rất tiếc, tôi chưa thể tham dự</option>
+                    </select>
+                </label>
+                <label>
+                    Lời chúc
+                    <textarea name="message" rows="4" maxlength="2000" placeholder="Gửi một lời chúc thật đẹp..." required></textarea>
+                </label>
+                <button class="primary-button" type="submit">Gửi phản hồi</button>
+                <p class="form-status" id="formStatus" role="status"></p>
+            </form>
+            <div class="wish-list">
+                @foreach (var wish in wedding.Wishes)
+                {
+                    <article>
+                        <strong>@wish.Name</strong>
+                        <p>@wish.Message</p>
+                    </article>
+                }
+            </div>
+        </section>
+
+        <section class="gift-section" id="gift">
+            <div class="section-heading">
+                <p class="script-label">Hộp mừng cưới</p>
+                <h2>Nhấn vào phong bao để mở mã QR</h2>
+            </div>
+            <div class="gift-envelope-grid">
+                @if (wedding.OrderedValidBankAccounts.Count > 0)
+                {
+                    <button class="gift-envelope-card gift-envelope-main" type="button" data-open-gift="giftDialog" aria-haspopup="dialog">
+                        <span class="gift-coin coin-one">囍</span>
+                        <span class="gift-coin coin-two">囍</span>
+                        <span class="gift-coin coin-three">囍</span>
+                        <span class="gift-envelope">
+                            <span class="gift-corner top-left-corner"></span>
+                            <span class="gift-corner top-right-corner"></span>
+                            <span class="gift-corner bottom-left-corner"></span>
+                            <span class="gift-corner bottom-right-corner"></span>
+                            <span class="gift-seal">囍</span>
+                        </span>
+                        <strong>Hộp mừng cưới</strong>
+                        <small>Nhấn để mở</small>
+                    </button>
+                }
+                else
+                {
+                    <p class="gift-empty">Chưa có tài khoản hợp lệ. AccountHolder phải trùng với Name trong CoupleProfiles.</p>
+                }
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>@orderedCoupleNames</p>
+        <span>Hẹn gặp quý khách trong ngày vui của gia đình chúng tôi.</span>
+    </footer>
+
+    <dialog class="photo-dialog" id="photoDialog">
+        <button class="dialog-close" type="button" data-close-photo aria-label="Đóng">×</button>
+        <img id="photoDialogImage" alt="Ảnh cưới phóng to" />
+    </dialog>
+
+    @if (wedding.OrderedValidBankAccounts.Count > 0)
+    {
+        <dialog class="gift-dialog gift-options-dialog" id="giftDialog">
+            <button class="dialog-close" type="button" data-close-gift aria-label="Đóng">×</button>
+            <h2>Hộp mừng cưới</h2>
+            <div class="gift-account-grid">
+                @foreach (var account in wedding.OrderedValidBankAccounts)
+                {
+                    <article class="gift-account-card">
+                        <h3>@account.Role</h3>
+                        <p>@account.AccountHolder</p>
+                        <p>@account.BankName - @account.AccountNumber</p>
+                        <img src="@account.QrUrl" alt="QR chuyển khoản @account.Role" loading="eager" decoding="async" />
+                    </article>
+                }
+            </div>
+        </dialog>
+    }
+</div>
