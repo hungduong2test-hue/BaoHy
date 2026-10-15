@@ -48,7 +48,7 @@ try {
     $appProcess = Start-Process `
         -FilePath "dotnet" `
         -ArgumentList $arguments `
-        -WorkingDirectory $Root `
+        -WorkingDirectory (Split-Path -Parent $ProjectDll) `
         -PassThru `
         -WindowStyle Hidden `
         -RedirectStandardOutput $OutputLog `

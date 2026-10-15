@@ -138,9 +138,9 @@ public sealed class WeddingPageData
     public string CeremonyLocationText { get; set; } = "LỄ THÀNH HÔN ĐƯỢC CỬ HÀNH TẠI";
     public string CeremonyPlace { get; set; } = "TƯ GIA";
     public string CeremonyFamilyOrder { get; set; } = "GroomFirst";
-    public string LunarDateText { get; set; } = "( TỨC NGÀY 11/04 NĂM BÍNH NGỌ )";
+    public string LunarDateText { get; set; } = "( TỨC NGÀY 16/09 NĂM BÍNH NGỌ )";
     public DateTime WeddingDate { get; set; } = new(2026, 5, 27, 10, 0, 0);
-    public string DateLabel { get; set; } = "Thứ Tư, 27 tháng 5, 2026";
+    public string DateLabel { get; set; } = "Chủ Nhật, 25 tháng 10, 2026";
     public string Venue { get; set; } = "Tư gia hai họ";
     public string Address { get; set; } = "6 Đ. Bờ Ruộng, Đức Phổ, Quảng Ngãi, Việt Nam";
     public string MapImage { get; set; } = "/images/wedding/map-preview.png";
