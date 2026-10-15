@@ -210,7 +210,8 @@
           mode: "no-cors",
           body: submission
         });
-        formStatus.textContent = "Đã gửi yêu cầu đến Google Sheets. Trình duyệt không thể xác nhận Google đã lưu; vui lòng kiểm tra lại với gia đình.";
+        formStatus.textContent = "Đã gửi phản hồi thành công. Cảm ơn bạn!";
+        rsvpForm.reset();
       } catch {
         formStatus.textContent = "Không gửi được phản hồi. Vui lòng kiểm tra kết nối mạng rồi thử lại.";
       }
